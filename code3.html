@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tạo mã QR chúc mừng 20/10</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      margin: 0;
+      background: linear-gradient(180deg, #ffe6f0, #fff);
+      color: #d63384;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    #qrcode {
+      display: inline-block;
+      background: #fff;
+      padding: 14px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(255,182,193,0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>💐 Chúc mừng chị em 20/10 💖</h1>
+  <div id="qrcode"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // Tự động tạo mã QR dẫn tới trang chúc mừng
+    const baseURL = window.location.origin + window.location.pathname.replace(/code1\.html$/, "");
+    const targetURL = baseURL + "chucmung.html";
+    new QRCode(document.getElementById("qrcode"), {
+      text: targetURL,
+      width: 240,
+      height: 240
+    });
+  </script>
+</body>
+</html>

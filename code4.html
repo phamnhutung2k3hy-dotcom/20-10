@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chúc mừng 20/10</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 60px 20px;
+      background: linear-gradient(180deg, #ffe6f0, #fff);
+      color: #d63384;
+    }
+    h1 {
+      font-size: 30px;
+      text-shadow: 0 0 8px rgba(255,192,203,0.4);
+    }
+    .heart {
+      position: fixed;
+      color: rgba(255,105,180,0.4);
+      font-size: 24px;
+      animation: float 6s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes float {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(-120vh) scale(1.4); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Chúc mừng chị em 20/10 vui vẻ, xinh đẹp và hạnh phúc! 💐</h1>
+  <script>
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 500);
+  </script>
+</body>
+</html>
